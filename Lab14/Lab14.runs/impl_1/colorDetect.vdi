@@ -1,0 +1,79 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Jul 31 13:43:17 2020
+# Process ID: 10520
+# Current directory: C:/Users/18191/Desktop/Lab14/Lab14.runs/impl_1
+# Command line: vivado.exe -log colorDetect.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source colorDetect.tcl -notrace
+# Log file: C:/Users/18191/Desktop/Lab14/Lab14.runs/impl_1/colorDetect.vdi
+# Journal file: C:/Users/18191/Desktop/Lab14/Lab14.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source colorDetect.tcl -notrace
+Command: open_checkpoint colorDetect_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 242.789 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xc7s15ftgb196-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Constraints 18-4398] Generator version for shapeDB does not match. shapeDB will be regenerated.
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.110 . Memory (MB): peak = 958.063 ; gain = 2.359
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 958.063 ; gain = 2.359
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 958.063 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2018.3 (64-bit) build 2405991
+open_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 958.063 ; gain = 715.273
+Command: write_bitstream -force colorDetect.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s15'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s15'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC IOSTDTYPE-1] IOStandard Type: I/O port TMDS_Tx_Clk_N is Single-Ended but has an IOStandard of TMDS_33 which can only support Differential
+ERROR: [DRC IOSTDTYPE-1] IOStandard Type: I/O port TMDS_Tx_Clk_P is Single-Ended but has an IOStandard of TMDS_33 which can only support Differential
+ERROR: [DRC IOSTDTYPE-1] IOStandard Type: I/O port TMDS_Tx_Data_N[0] is Single-Ended but has an IOStandard of TMDS_33 which can only support Differential
+ERROR: [DRC IOSTDTYPE-1] IOStandard Type: I/O port TMDS_Tx_Data_N[1] is Single-Ended but has an IOStandard of TMDS_33 which can only support Differential
+ERROR: [DRC IOSTDTYPE-1] IOStandard Type: I/O port TMDS_Tx_Data_N[2] is Single-Ended but has an IOStandard of TMDS_33 which can only support Differential
+ERROR: [DRC IOSTDTYPE-1] IOStandard Type: I/O port TMDS_Tx_Data_P[0] is Single-Ended but has an IOStandard of TMDS_33 which can only support Differential
+ERROR: [DRC IOSTDTYPE-1] IOStandard Type: I/O port TMDS_Tx_Data_P[1] is Single-Ended but has an IOStandard of TMDS_33 which can only support Differential
+ERROR: [DRC IOSTDTYPE-1] IOStandard Type: I/O port TMDS_Tx_Data_P[2] is Single-Ended but has an IOStandard of TMDS_33 which can only support Differential
+ERROR: [DRC REQP-161] connects_CLKINSEL_VCC_connects_CLKIN1_ACTIVE: clk_10/inst/plle2_adv_inst: The PLLE2_ADV with CLKINSEL tied high requires the CLKIN1 pin to be active.
+WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer Camera_IIC_SDA_IOBUF/IBUF has no loads. It is recommended to have an input buffer drive an internal load.
+WARNING: [DRC CFGBVS-1] Missing CFGBVS and CONFIG_VOLTAGE Design Properties: Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+WARNING: [DRC PDRC-153] Gated clock check: Net Driver_IIC0/inst/IIC_Busy is a gated clock net sourced by a combinational pin Driver_IIC0/inst/IIC_Busy_INST_0/O, cell Driver_IIC0/inst/IIC_Busy_INST_0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT Driver_IIC0/inst/IIC_Busy_INST_0 is driving clock pin of 10 cells. This could lead to large hold time violations. Involved cells are:
+Diver_OV5647_Init/inst/Enable_reg, Diver_OV5647_Init/inst/FSM_sequential_Write_State_reg[0], Diver_OV5647_Init/inst/FSM_sequential_Write_State_reg[1], Diver_OV5647_Init/inst/FSM_sequential_Write_State_reg[2], Diver_OV5647_Init/inst/FSM_sequential_Write_State_reg[3], Diver_OV5647_Init/inst/FSM_sequential_Write_State_reg[4], Diver_OV5647_Init/inst/FSM_sequential_Write_State_reg[5], Diver_OV5647_Init/inst/FSM_sequential_Write_State_reg[6], Diver_OV5647_Init/inst/Reg_Addr_reg, and Diver_OV5647_Init/inst/Reg_Data_reg
+INFO: [Vivado 12-3199] DRC finished with 9 Errors, 4 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado 12-1345] Error(s) found during DRC. Bitgen not run.
+INFO: [Common 17-83] Releasing license: Implementation
+20 Infos, 4 Warnings, 0 Critical Warnings and 10 Errors encountered.
+write_bitstream failed
+ERROR: [Common 17-39] 'write_bitstream' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 31 13:43:45 2020...
